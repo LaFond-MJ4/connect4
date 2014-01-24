@@ -10,7 +10,8 @@ import java.util.*;
  * @author MJ
  */
 public class Connect4 {
-    String name;
+    String nameFirst;
+    String nameLast;
     int player;
     String instructions = "The name of the game is Connect 4 \n"
             + "Player 1 and Player 2 will take turns putting their pieces within the grid \n"
@@ -18,7 +19,7 @@ public class Connect4 {
     
     
     public String getName(){ 
-      return name;  
+      return nameFirst + " " + nameLast;  
     }
     public int numberOfPlayers(){
         return player;
@@ -27,8 +28,9 @@ public class Connect4 {
         return instructions;
     }
     
-    public Connect4(String name, int player){
-        this.name = name;
+    public Connect4(String nameFirst, String nameLast, int player){
+        this.nameFirst = nameFirst;
+        this.nameLast = nameLast;
         this.player = player;
     }
     
@@ -37,13 +39,14 @@ public class Connect4 {
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Please enter your first name:");
-        String name = input.next();
+        System.out.println("Please enter your name:");
+        String nameFirst = input.next();
+        String nameLast = input.next();
        
         System.out.println("Enter number of players:");
         int player = input.nextInt();
         
-        Connect4 game = new Connect4(name, player);
+        Connect4 game = new Connect4(nameFirst, nameLast, player);
 
        System.out.println("Welcome " + game.getName() + "\n I see you are "
                + "playing with " + game.numberOfPlayers() + " players. "
