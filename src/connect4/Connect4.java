@@ -48,9 +48,13 @@ public class Connect4 {
         
         Connect4 game = new Connect4(nameFirst, nameLast, player);
 
-       System.out.println("Welcome " + game.getName() + "\n I see you are "
+       System.out.println("Welcome " + game.getName() + "\nI see you are "
                + "playing with " + game.numberOfPlayers() + " players. "
-               + "\n Here are the rules:\n" + game.displayHelp());
+               + "\nHere are the rules:\n" + game.displayHelp());
+       
+
+       
+
     }
     
 }
