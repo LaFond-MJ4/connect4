@@ -5,6 +5,7 @@
 
 package connect4;
 import java.util.*;
+import connect4.*;
 /**
  *
  * @author MJ
@@ -52,9 +53,13 @@ public class Connect4 {
                + "playing with " + game.numberOfPlayers() + " players. "
                + "\nHere are the rules:\n" + game.displayHelp());
        
-
+       Board gameBoard = new Board();
+       gameBoard.DisplayWidthHeight();
        
-
+       Piece gamePiece = new Piece();
+       gamePiece.player = 1;
+       gamePiece.DisplayPlayer();
+       
     }
     
 }
