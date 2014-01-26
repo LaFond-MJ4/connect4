@@ -11,29 +11,18 @@ package connect4;
  * @author Madison
  */
 public class Statistics {
-    int score1 = 100;
-    int score2 = 100;
-    int won1 = 100;
-    int won2 = 100;
+    String name;
+    int score = 0;
+    int won = 0;
+    int loss = 0;
+    int tie = 0;
     
-    public int player1Score(){
-        return score1;
-    }
-    public int player2Score(){
-        return score2;
-    }
-    public int player1Won(){
-        return won1;
-    }
-    public int player2Won(){
-        return won2;
-    }
-    public Statistics(int score1, int score2, int won1, int won2){
-        this.score1 = score1;
-        this.score2 = score2;
-        this.won1 = won1;
-        this.won2 = won2;
+    public Statistics(){
+        
     }
     
+    public void displayPlayer(){
+        System.out.println();
+    } 
     
 }
