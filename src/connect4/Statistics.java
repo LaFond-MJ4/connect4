@@ -22,7 +22,7 @@ public class Statistics {
     }
     
     public void displayPlayer(){
-        System.out.println();
+        System.out.println("Score:" + score + "\nWins:" + won + "\nLosses:" + loss + "\nTies:" + tie);
     } 
     
 }
