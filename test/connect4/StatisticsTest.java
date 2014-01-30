@@ -45,14 +45,13 @@ public class StatisticsTest {
     public void testDisplayPlayer() {
         //test 1
         int won = 3;
-        int loss = 4;
+        int loss =  4;
         int tie = 6;
-        System.out.println("Get winning Score - Test 1");
+        System.out.println("Test 1");
         Statistics instance = new Statistics();
         int expResult = 5;
         int result = instance.displayScore(won, loss, tie);
         assertEquals(expResult, result);
-        
         
         //test 2
         won = -5;
@@ -62,16 +61,17 @@ public class StatisticsTest {
         expResult = -7;
         result = instance.displayScore(won, loss, tie);
         assertEquals(expResult, result);
-       
+
         
         //test 3
         won = 4;
         loss = -3;
-        tie = -7;
+        tie = 7;
         System.out.println("test 3");
         expResult = -7;
         result = instance.displayScore(won, loss, tie);
         assertEquals(expResult, result);
+
         
         //test 4
         won = 2;
@@ -81,7 +81,7 @@ public class StatisticsTest {
         expResult = -7;
         result = instance.displayScore(won, loss, tie);
         assertEquals(expResult, result);
-      
+
         
         //test 5
         won = 0;
@@ -91,7 +91,7 @@ public class StatisticsTest {
         expResult = 0;
         result = instance.displayScore(won, loss, tie);
         assertEquals(expResult, result);
-       
+
         
     }
     
