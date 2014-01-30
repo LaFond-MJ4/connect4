@@ -42,7 +42,7 @@ public class Statistics {
             return score;
         }
         score = won - loss + tie;
-        return score; 
+        return (short) score; 
     } 
    public int stats(){
        return displayScore(won, loss, tie);

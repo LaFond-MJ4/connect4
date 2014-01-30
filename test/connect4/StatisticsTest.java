@@ -44,60 +44,54 @@ public class StatisticsTest {
     @Test
     public void testDisplayPlayer() {
         //test 1
-        int won = 0;
-        int loss = 0;
-        int tie = 0;
+        int won = 3;
+        int loss = 4;
+        int tie = 6;
         System.out.println("Get winning Score - Test 1");
         Statistics instance = new Statistics();
-        int expResult = 0;
+        int expResult = 5;
         int result = instance.displayScore(won, loss, tie);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
         
         //test 2
-        won = 2;
-        loss = 1;
-        tie = 0;
+        won = -5;
+        loss = 4;
+        tie = 8;
         System.out.println("test 2");
-        expResult = 1;
+        expResult = -7;
         result = instance.displayScore(won, loss, tie);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
         
         //test 3
-        won = 1;
-        loss = 1;
-        tie = 1;
+        won = 4;
+        loss = -3;
+        tie = -7;
         System.out.println("test 3");
-        expResult = 1;
+        expResult = -7;
         result = instance.displayScore(won, loss, tie);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
         
         //test 4
-        won = 8;
-        loss = 0;
-        tie = 0;
+        won = 2;
+        loss = 6;
+        tie = -4;
         System.out.println("test 4");
-        expResult = 8;
+        expResult = -7;
         result = instance.displayScore(won, loss, tie);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
         
         //test 5
-        won = 6;
-        loss = 6;
-        tie = 6;
+        won = 0;
+        loss = 0;
+        tie = 0;
         System.out.println("test 5");
-        expResult = 6;
+        expResult = 0;
         result = instance.displayScore(won, loss, tie);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
         
     }
     
