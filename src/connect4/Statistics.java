@@ -11,18 +11,26 @@ package connect4;
  * @author Madison
  */
 public class Statistics {
-    String name;
-    int score = 0;
-    int won = 0;
-    int loss = 0;
-    int tie = 0;
+    int score;
+    int won;
+    int loss;
+    int tie;
+    
+    
+
     
     public Statistics(){
-        
     }
     
-    public void displayPlayer(){
-        System.out.println("Score:" + score + "\nWins:" + won + "\nLosses:" + loss + "\nTies:" + tie);
+    public int displayScore(int won, int loss, int tie){    
+        if (won == 0 & loss == 0 & tie == 0){
+            score = 0;
+            return score;
+        }
+        score = won - loss + tie;
+        return score; 
     } 
-    
+   public int stats(){
+       return displayScore(won, loss, tie);
+    }
 }

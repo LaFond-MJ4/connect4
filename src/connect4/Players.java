@@ -13,8 +13,8 @@ import java.util.Scanner;
  * @author Madison
  */
 public class Players {
-    String player1;
-    String player2;
+    public String player1;
+    public String player2;
     
     public Players(){
     }

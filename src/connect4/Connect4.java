@@ -35,7 +35,7 @@ public class Connect4 {
        gamePiece.DisplayPlayer();
        
        Statistics stats = new Statistics();
-       stats.displayPlayer();
+       stats.stats();
        
     }
      private void display(){
