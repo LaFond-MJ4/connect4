@@ -22,7 +22,21 @@ public class Statistics {
     public Statistics(){
     }
     
-    public int displayScore(int won, int loss, int tie){    
+    public int displayScore(int won, int loss, int tie){ 
+        if (won < 0 ) {
+            System.out.println("\nInvalid");
+            return -7;
+        }
+        
+        if (loss < 0 ) {
+            System.out.println("\nInvalid");
+            return -7;
+        }
+        
+        if (tie < 0 ) {
+            System.out.println("\nInvalid");
+            return -7;
+        }
         if (won == 0 & loss == 0 & tie == 0){
             score = 0;
             return score;
