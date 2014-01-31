@@ -13,8 +13,9 @@ import java.util.Scanner;
  * @author Madison
  */
 public class Players {
-    public String player1;
-    public String player2;
+    String player1;
+    String player2;
+    int x;
     
     public Players(){
     }
@@ -28,9 +29,62 @@ public class Players {
         return "Welcome " + player1 + " and " + player2;
         
     }
+    
     public void displayPlayer(){
         System.out.println(player());
     }
     
+    public int playerTurn(int x){
+        if(x == 0){
+        System.out.println("Player one \n\tIt is your turn");
+                }
+        if(x == 2){
+            System.out.println("Player one \n\tIt is your turn");
+        }
+        if(x == 4){
+            System.out.println("Player one \n\tIt is your turn");
+        }
+        if(x == 6){
+            System.out.println("Player one \n\tIt is your turn");
+        } 
+        if(x == 8){
+            System.out.println("Player one \n\tIt is your turn");
+        }
+        if(x == 10){
+            System.out.println("Player one \n\tIt is your turn");
+        }
+           
+        if(x == 10 + 1){ 
+            System.out.println("Invalid");
+        }
+        if(x == 13 - 1){
+            System.out.println("Invalid");
+        }
+        if(x == 13){
+            System.out.println("Invalid");
+        }
+        if(x == 1){        
+           System.out.println("Player two \n\tIt is your turn");
+        }
+        if(x == 3){        
+           System.out.println("Player two \n\tIt is your turn");
+        }
+        if(x == 5){        
+           System.out.println("Player two \n\tIt is your turn");
+        }
+        if(x == 7){        
+           System.out.println("Player two \n\tIt is your turn");
+        }
+        if(x == 9){        
+           System.out.println("Player two \n\tIt is your turn");
+        }
+        return (short) x;
+    }
+    public void turn(){
+        System.out.println(playerTurn(x));
+    }
+    }
     
-}
+    
+    
+

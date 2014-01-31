@@ -37,6 +37,9 @@ public class Connect4 {
        Statistics stats = new Statistics();
        stats.stats();
        
+       Players turn = new Players();
+       turn.turn();
+       
     }
      private void display(){
      System.out.println(this.instructions);
