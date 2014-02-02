@@ -17,11 +17,11 @@ public class Game {
     
     public Game(String playerName) {
         win = 0;
-        loss= 0;
+        loss = 0;
         player = playerName;
     }
     
-    public void addWin() { 
+    public void addWin() {
         ++win;
     }
     
@@ -29,15 +29,7 @@ public class Game {
         --loss;
     }
     
-    public void checkScore() {
-        if () {
-            
-        }
+    public void getWinCount() {
+        
     }
-  
-    public void winAGame(Game a, Game b) {
-    win = win + 1;
- 
-  }
 }
-
