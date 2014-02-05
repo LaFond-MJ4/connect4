@@ -40,6 +40,10 @@ public class Connect4 {
        Players turn = new Players();
        turn.turn();
        
+       StatisticsMenu menu = new StatisticsMenu();
+       menu.display();
+       menu.getInput();
+       
     }
      private void display(){
      System.out.println(this.instructions);
