@@ -44,6 +44,10 @@ public class Connect4 {
        menu.display();
        menu.getInput();
        
+       HelpMenuView help = new HelpMenuView();
+       help.display();
+       help.getInput();
+       
     }
      private void display(){
      System.out.println(this.instructions);
