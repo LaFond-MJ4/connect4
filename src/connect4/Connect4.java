@@ -48,6 +48,9 @@ public class Connect4 {
        help.display();
        help.getInput();
        
+       MainMenuView menu = new MainMenuView();
+       menu.display();
+       menu.getInput();
     }
      private void display(){
      System.out.println(this.instructions);
