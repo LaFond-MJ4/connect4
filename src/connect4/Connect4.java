@@ -51,6 +51,9 @@ public class Connect4 {
        MainMenuView menu = new MainMenuView();
        menu.display();
        menu.getInput();
+       
+       GetMarkerColor color = new GetMarkerColor();
+       color.input();
     }
      private void display(){
      System.out.println(this.instructions);
