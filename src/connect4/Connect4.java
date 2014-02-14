@@ -30,6 +30,9 @@ public class Connect4 {
        Board gameBoard = new Board();
        gameBoard.newBoard();
        
+       GetLocation location = new GetLocation();
+       location.askUser();
+       
        Piece gamePiece = new Piece();
        gamePiece.player = 1;
        gamePiece.DisplayPlayer();
