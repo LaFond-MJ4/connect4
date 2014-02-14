@@ -27,6 +27,9 @@ public class Connect4 {
        Connect4 connect4 = new Connect4();
        connect4.display();
        
+       Board gameBoard = new Board();
+       gameBoard.newBoard();
+       
        Piece gamePiece = new Piece();
        gamePiece.player = 1;
        gamePiece.DisplayPlayer();

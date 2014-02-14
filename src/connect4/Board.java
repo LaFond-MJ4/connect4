@@ -10,15 +10,8 @@ package connect4;
  *
  * @author Jim Cendejas
  */
+
 public class Board {
-
-    public int rowCount = 6;
-    public int columnCount = 7;
-   
-    int[][] location = new int[6][7];
-
-
-public class GameBoard {
     int[][] gameBoard = new int[6][7];
     
     public void newBoard() {
@@ -36,5 +29,4 @@ public class GameBoard {
             System.out.println();
         }
     }
-}
 }
