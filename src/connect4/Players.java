@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Players {
     String player1;
     String player2;
-    int x;
+    GetLocation getLocation = new GetLocation();
     
     public Players(){
     }
@@ -34,54 +34,17 @@ public class Players {
         System.out.println(player());
     }
     
-    public int playerTurn(int x){
-        if(x == 0){
-        System.out.println("Player one \n\tIt is your turn");
-                }
-        if(x == 2){
-            System.out.println("Player one \n\tIt is your turn");
+    public int playerTurn(){
+        int x;
+        for(x=0; x <= 42; x++ ){
+            if(x % 2 == 0)
+                System.out.println("Player one, it's your turn");
+            if(x % 2 != 0){
+                System.out.println("Player two, it is your turn");     
+            }
+            this.getLocation.askUser();
         }
-        if(x == 4){
-            System.out.println("Player one \n\tIt is your turn");
-        }
-        if(x == 6){
-            System.out.println("Player one \n\tIt is your turn");
-        } 
-        if(x == 8){
-            System.out.println("Player one \n\tIt is your turn");
-        }
-        if(x == 10){
-            System.out.println("Player one \n\tIt is your turn");
-        }
-           
-        if(x == 10 + 1){ 
-            System.out.println("Invalid");
-        }
-        if(x == 13 - 1){
-            System.out.println("Invalid");
-        }
-        if(x == 13){
-            System.out.println("Invalid");
-        }
-        if(x == 1){        
-           System.out.println("Player two \n\tIt is your turn");
-        }
-        if(x == 3){        
-           System.out.println("Player two \n\tIt is your turn");
-        }
-        if(x == 5){        
-           System.out.println("Player two \n\tIt is your turn");
-        }
-        if(x == 7){        
-           System.out.println("Player two \n\tIt is your turn");
-        }
-        if(x == 9){        
-           System.out.println("Player two \n\tIt is your turn");
-        }
-        return (short) x;
-    }
-    public void turn(){
-        System.out.println(playerTurn(x));
+        return x;
     }
     }
     

@@ -12,7 +12,8 @@ import java.util.Scanner;
  * @author Madison
  */
 public class GetMarkerColor {
-
+    Players player = new Players();
+    
     public String getColor() {
 
         String marker1 = null;

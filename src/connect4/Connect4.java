@@ -27,6 +27,9 @@ public class Connect4 {
        Connect4 connect4 = new Connect4();
        connect4.display();
        
+       //Players turn = new Players();
+       //turn.playerTurn();
+       
        Board gameBoard = new Board();
        gameBoard.newBoard();
        
@@ -39,9 +42,6 @@ public class Connect4 {
        
        Statistics stats = new Statistics();
        stats.stats();
-       
-       Players turn = new Players();
-       turn.turn();
        
        StatisticsMenu statsMenu = new StatisticsMenu();
        statsMenu.display();

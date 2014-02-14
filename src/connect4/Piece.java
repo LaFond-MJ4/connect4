@@ -11,6 +11,7 @@ package connect4;
  * @author Jim Cendejas
  */
 public class Piece {
+    
      int player;
      public void DisplayPlayer(){
          System.out.println(player);
