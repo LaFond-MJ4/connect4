@@ -15,31 +15,32 @@ public class MainMenuControl {
     
     public void startGame(long noPlayers) {
         if(noPlayers != 1 && noPlayers != 2) {
-            new Connect4().displayError("startGame - invalid number of players specified.");
+            System.out.println("startGame - invalid number of players specified.");
             return;
         }
-        
-        Game game;
+
+        Game game = new Game();
         if (noPlayers == 1) {
             game = this.create("ONE_PLAYER");
         }
         else {
             game = this.create("TWO_PLAYER");
         }
-        
-        GameMenuView gameMenu = new GameMenuView(game);
+
+        MainMenuView gameMenu = new MainMenuView();
         gameMenu.getInput();
     }
     
     public Game create(String gameType) {
         Game game = null;
-        Player player1 = null;
-        Player player2 = null;
+        Players player1 = null;
+        Players player2 = null;
         
         if (gameType == null) {
-            new Connect4().displayError("MainCommands - create: gameType is null");
+            System.out.println("MainCommands - create: gameType is null");
             return null;
         }
+        /* THIS IS NOT WORKING
         
         if (gameType.equals(Game.ONE_PLAYER)) {
             game = new Game(Game.ONE_PLAYER);
@@ -51,6 +52,7 @@ public class MainMenuControl {
         
         game.playerA = player1;
         game.playerB = player2;
+                */
         return game;
     }
     

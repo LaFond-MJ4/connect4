@@ -14,11 +14,11 @@ public class Game {
     int win;
     int loss;
     String player;
-    
-    public Game(String playerName) {
+    // THIS NEEDS TO BE FIXED
+    public Game() {
         win = 0;
         loss = 0;
-        player = playerName;
+        //player = playerName;
     }
     
     public void addWin() {

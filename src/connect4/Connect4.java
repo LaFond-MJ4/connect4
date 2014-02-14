@@ -37,17 +37,17 @@ public class Connect4 {
        Players turn = new Players();
        turn.turn();
        
-       StatisticsMenu menu = new StatisticsMenu();
-       menu.display();
-       menu.getInput();
+       StatisticsMenu statsMenu = new StatisticsMenu();
+       statsMenu.display();
+       statsMenu.getInput();
        
        HelpMenuView help = new HelpMenuView();
        help.display();
        help.getInput();
        
-       MainMenuView menu = new MainMenuView();
-       menu.display();
-       menu.getInput();
+       MainMenuView mainMenu = new MainMenuView();
+       mainMenu.display();
+       mainMenu.getInput();
        
        GetMarkerColor color = new GetMarkerColor();
        color.input();

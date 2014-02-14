@@ -11,17 +11,17 @@ package connect4;
  * @author Jim
  */
 public class BoardView {
-    Board board;
+    Board board = new Board();
+    /*
     
-    public void displayBoard(Board board) {
+    public void displayBoard() {
         
-        this.board = board;
         this.printHeadRow();
         this.printDividerRow();
         
         for (int i = 0; i < this.board.rowCount; i++) {
-            Location[] rowOfLocations = this.board.boardLocations[i];
-            this.printRow(i+1, rowOfLocations);
+            //location[] rowOfLocations = this.board.boardLocations[i];
+            //this.printRow(i+1, rowOfLocations);
             this.printDividerRow();
         }
         
@@ -54,7 +54,7 @@ public class BoardView {
         System.out.print("-----|");
     }
 
-    private void printRow(int rowNumber, Location[] rowLocations) {
+    private void printRow() {
         
         String letter = " ";
         if (rowLocations[0].player != null) {
@@ -72,4 +72,5 @@ public class BoardView {
             System.out.print(" " + letter + " |");
         }
     }
+    */
 }
