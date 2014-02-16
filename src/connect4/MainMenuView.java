@@ -16,7 +16,7 @@ public class MainMenuView {
     
     private static final String[][] menuItems = {
         {"1", "One player game"},
-        {"2", "One player game"},
+        {"2", "Two player game"},
         {"S", "Statistics"},
         {"H", "Help"},
         {"X", "Exit Connect 4"}
