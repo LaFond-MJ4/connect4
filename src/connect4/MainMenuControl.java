@@ -56,6 +56,12 @@ public class MainMenuControl {
         return game;
     }
     
+    public void displayStatsMenu(){
+       StatisticsMenu statsMenu = new StatisticsMenu();
+       //statsMenu.display();
+       statsMenu.getInput();
+    }
+    
     public void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.getInput();

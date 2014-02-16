@@ -17,6 +17,7 @@ public class MainMenuView {
     private static final String[][] menuItems = {
         {"1", "One player game"},
         {"2", "One player game"},
+        {"S", "Statistics"},
         {"H", "Help"},
         {"X", "Exit Connect 4"}
     };
@@ -44,10 +45,14 @@ public class MainMenuView {
                 case "2":
                     this.mainMenuControl.startGame(2);
                     break;
+                case "S":
+                    this.mainMenuControl.displayStatsMenu();
+                    break;
                 case "H":
                     this.mainMenuControl.displayHelpMenu();
                     break;
                 case "X":
+                    System.exit(0);
                     break;
                 default:
                     new Connect4Error().displayError("Invalid command. Please enter a valid command.");

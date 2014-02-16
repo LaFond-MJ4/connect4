@@ -4,7 +4,7 @@
  */
 
 package connect4;
-import java.util.*;
+//import java.util.*;
 /**
  *
  * @author MJ
@@ -20,18 +20,28 @@ public class Connect4 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {     
-        Players output = new Players();
-        output.displayPlayer();
-
+    public static void main(String[] args) {
        Connect4 connect4 = new Connect4();
        connect4.display();
+       
+        /*
+        If you need to test code do it just under here
+        */ 
        
        //Players turn = new Players();
        //turn.playerTurn();
        
        Board gameBoard = new Board();
        gameBoard.newBoard();
+       
+       MainMenuView mainMenu = new MainMenuView();
+       //mainMenu.display();
+       mainMenu.getInput();
+       
+       /* 
+       Anything past here will not run as mainMenu ends the program
+       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+       */
        
        GetLocation location = new GetLocation();
        location.askUser();
@@ -40,26 +50,22 @@ public class Connect4 {
        gamePiece.player = 1;
        gamePiece.DisplayPlayer();
        
-       Statistics stats = new Statistics();
-       stats.stats();
+       //Statistics stats = new Statistics();
+       //stats.stats();
+      
        
-       StatisticsMenu statsMenu = new StatisticsMenu();
-       statsMenu.display();
-       statsMenu.getInput();
-       
-       HelpMenuView help = new HelpMenuView();
-       help.display();
-       help.getInput();
-       
-       MainMenuView mainMenu = new MainMenuView();
-       mainMenu.display();
-       mainMenu.getInput();
+       //HelpMenuView help = new HelpMenuView();
+       //help.display();
+       //help.getInput();
        
        GetMarkerColor color = new GetMarkerColor();
        color.input();
+       
+        Players output = new Players();
+        output.displayPlayer();
     }
-     private void display(){
-     System.out.println(this.instructions);
-}
+    private void display(){
+        System.out.println(this.instructions);
+    }
     
 }
