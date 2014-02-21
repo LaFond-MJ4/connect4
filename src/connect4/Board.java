@@ -23,10 +23,24 @@ public class Board {
     }
     public void displayBoard() {
         for (int i = 0; i < 6; i++) {
+            System.out.print("|");
             for (int j = 0; j < 7; j++) {
-                System.out.print(this.gameBoard[i][j]); // Three means no one has gone there
-            }
-            System.out.println();
+                boardFill(i,j);
+                
+            } 
+            System.out.println();          
         }
+    }
+    public void boardFill(int i, int j){
+        if (this.gameBoard[i][j] == 3){
+            System.out.print("_" + "|");
+        }
+        else if(this.gameBoard[i][j] == 1){
+           System.out.print("_" + "|"); 
+        }
+        else {
+            System.out.print("_" + "|");
+        }
+            
     }
 }
