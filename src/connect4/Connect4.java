@@ -33,6 +33,7 @@ public class Connect4 {
        
        Board gameBoard = new Board();
        gameBoard.newBoard();
+       gameBoard.displayBoard();
        
        MainMenuView mainMenu = new MainMenuView();
        //mainMenu.display();
