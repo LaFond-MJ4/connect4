@@ -30,13 +30,7 @@ public class Connect4 {
        
        //Players turn = new Players();
        //turn.playerTurn();
-       
-       GetMarkerColor color = new GetMarkerColor();
-       color.getColorPlayerOne();
-       color.getColorPlayerTwo();
-       
-       
-       
+
        Board gameBoard = new Board();
        gameBoard.newBoard();
        gameBoard.displayBoard();
