@@ -16,23 +16,29 @@ public class GetMarkerColor {
     Players player = new Players();
     String marker1;
     String marker2;
-    Scanner in = new Scanner(System.in);
+    Scanner inFile = new Scanner(System.in);
+    Board otherClass = new Board();
 
     public String getColorPlayerOne() {
         boolean valid = false;
         while (!valid) {
             System.out.print("Player 1 please enter the desired letter that "
                     + "you want your marker to be: ");
+            
 
-            marker1 = in.nextLine();
+            marker1 = inFile.nextLine();
 
+            
             if (marker1 == null || marker1.length() < 1) {
                 continue;
             }
             valid = true;
+            
         }
+        
         return marker1;
     }
+    
 
     public String getColorPlayerTwo() {
         boolean valid2 = false;
@@ -40,7 +46,7 @@ public class GetMarkerColor {
             System.out.print("Player 2 please enter the desired letter that "
                     + "you want your marker to be: ");
 
-            marker2 = in.nextLine();
+            marker2 = inFile.nextLine();
 
             if (marker2 == null || marker2.length() < 1) {
                 continue;
