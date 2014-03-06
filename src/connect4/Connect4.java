@@ -27,18 +27,13 @@ public class Connect4 {
         /*
         If you need to test code do it just under here
         */ 
-       
+              
        //Players turn = new Players();
        //turn.playerTurn();
-       
-       Board gameBoard = new Board();
-       gameBoard.newBoard();
-       gameBoard.displayBoard();
        
        MainMenuView mainMenu = new MainMenuView();
        //mainMenu.display();
        mainMenu.getInput();
-       
        /* 
        Anything past here will not run as mainMenu ends the program
        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -46,10 +41,6 @@ public class Connect4 {
        
        GetLocation location = new GetLocation();
        location.askUser();
-       
-       Piece gamePiece = new Piece();
-       gamePiece.player = 1;
-       gamePiece.DisplayPlayer();
        
        //Statistics stats = new Statistics();
        //stats.stats();
@@ -61,9 +52,7 @@ public class Connect4 {
        
        //GetMarkerColor color = new GetMarkerColor();
        //color.input();
-       
-        Players output = new Players();
-        output.displayPlayer();
+
     }
     private void display(){
         System.out.println(this.instructions);

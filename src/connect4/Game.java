@@ -11,25 +11,39 @@ package connect4;
  * @author Jim Cendejas
  */
 public class Game {
-    int win;
-    int loss;
-    String player;
-    // THIS NEEDS TO BE FIXED
-    public Game() {
-        win = 0;
-        loss = 0;
-        //player = playerName;
+
+public void playGame(int numPlayers){
+    if (numPlayers == 1){
+        onePlayerGame();
     }
+    else
+    {
+        twoPlayerGame();
+    }   
+}
+
+public void onePlayerGame(){
     
-    public void addWin() {
-        ++win;
-    }
+}
+
+public void twoPlayerGame(){
+    Players player1 = new Players();
+    System.out.println("Player 1");
+    player1.promptPlayerName();
+    player1.promptForToken();
+    Players player2 = new Players();
+    System.out.println("Player 2");
+    player2.promptPlayerName();
+    player2.promptForToken();
     
-    public void addLoss() {
-        --loss;
-    }
+    Board gameBoard = new Board();
+    gameBoard.newBoard();
+    gameBoard.displayBoard(player1.getPlayerToken(), player2.getPlayerToken());
     
-    public void getWinCount() {
-        
+    /* This will run till the game is over! */
+    while (gameBoard.isGameNotOver()){
+        System.out.println("yo");
+        gameBoard.setGameOver(false);
     }
+}
 }
