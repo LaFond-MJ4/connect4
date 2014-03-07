@@ -6,13 +6,14 @@
 
 package connect4;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Madison
  */
-public class StatisticsMenu {
+public class  StatisticsMenu implements Serializable{
     private final static String[][] menuItems = {
         {"L", "last statistics"},
         {"O", "statistics overall"},         
@@ -55,7 +56,7 @@ public class StatisticsMenu {
     }
 
         // displays the help menu
-    public final void display() {
+    private final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
