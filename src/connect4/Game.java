@@ -11,7 +11,7 @@ package connect4;
  * @author Jim Cendejas
  */
 public class Game {
-
+    
 public void playGame(int numPlayers){
     if (numPlayers == 1){
         onePlayerGame();
@@ -38,12 +38,11 @@ public void twoPlayerGame(){
     
     Board gameBoard = new Board();
     gameBoard.newBoard();
-    gameBoard.displayBoard(player1.getPlayerToken(), player2.getPlayerToken());
-    
+    gameBoard.displayBoard(player1.getPlayerName(), player2.getPlayerName(), player1.getPlayerToken(), player2.getPlayerToken());
     /* This will run till the game is over! */
     while (gameBoard.isGameNotOver()){
-        System.out.println("yo");
-        gameBoard.setGameOver(false);
-    }
+        gameBoard.playerPlacement(player1.getPlayerName(), player2.getPlayerName(), player1.getPlayerToken(), player2.getPlayerToken());
+        gameBoard.setGameOver(true);
+    }  
 }
 }

@@ -73,6 +73,7 @@ public class Players implements Serializable {
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
     }
+    
 
     public int getTies() {
         return ties;
