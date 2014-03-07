@@ -5,11 +5,13 @@
  */
 package connect4;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Madison
  */
-public class StatisticsControl {
+public class StatisticsControl implements Serializable{
 
     public StatisticsControl() {
 
@@ -32,7 +34,7 @@ public class StatisticsControl {
         displayStatistics();
     }
 
-    public void displayStatistics() {
+    private void displayStatistics() {
         System.out.println(
                 "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         String[][] players = {{"Bob", "7"}, {"Shelly", "5"}, {"Steve", "3"}, {"Carol","7"}, {"Jake","1"}};
@@ -44,7 +46,7 @@ public class StatisticsControl {
         }
     }
 
-    public static void InsertionSort(String[][] num) {
+    private static void InsertionSort(String[][] num) {
         int j;  // the number of items sorted so far
         int key;  // the item to be inserted
         int i;
