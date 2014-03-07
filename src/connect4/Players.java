@@ -13,6 +13,8 @@ import java.util.Scanner;
  *
  * @author Madison
  */
+
+/* This class will have all the information relating to one player */
 public class Players implements Serializable {
     private String playerName;
     private int ties = 0;
@@ -20,11 +22,10 @@ public class Players implements Serializable {
     private int losses = 0;
     private String token = "";
     
-    GetLocation getLocation = new GetLocation();
-    
     public Players(){
     }
     
+    // prompts the user for their name and saves it
     public void promptPlayerName(){
         System.out.print("What is your name? ");
         String name;
@@ -45,6 +46,7 @@ public class Players implements Serializable {
         this.ties++;
     }
     
+    //asks the user what they want their token to be can only be one char
     public void promptForToken(){
         System.out.print("What do you want your token to be? ");
 
@@ -102,13 +104,5 @@ public class Players implements Serializable {
 
     public void setPlayerToken(String playerToken) {
         this.token = playerToken;
-    }
-
-    public GetLocation getGetLocation() {
-        return getLocation;
-    }
-
-    public void setGetLocation(GetLocation getLocation) {
-        this.getLocation = getLocation;
     }
 }
