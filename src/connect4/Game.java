@@ -31,6 +31,7 @@ public void twoPlayerGame(){
     System.out.println("Player 1");
     player1.promptPlayerName();
     player1.promptForToken();
+    
     Players player2 = new Players();
     System.out.println("Player 2");
     player2.promptPlayerName();
@@ -38,11 +39,37 @@ public void twoPlayerGame(){
     
     Board gameBoard = new Board();
     gameBoard.newBoard();
-    gameBoard.displayBoard(player1.getPlayerName(), player2.getPlayerName(), player1.getPlayerToken(), player2.getPlayerToken());
+    gameBoard.displayBoard(player1.getPlayerToken(), player2.getPlayerToken());
+    GetLocation location = new GetLocation();
+    
     /* This will run till the game is over! */
     while (gameBoard.isGameNotOver()){
-        gameBoard.playerPlacement(player1.getPlayerName(), player2.getPlayerName(), player1.getPlayerToken(), player2.getPlayerToken());
-        gameBoard.setGameOver(true);
-    }  
+        System.out.println(player1.getPlayerName() + "'s turn");
+        while (!gameBoard.dropPiece(Integer.parseInt(location.askUser()), 1)){
+            System.out.println("Column is full please enter a valid move");
+        }
+        gameBoard.displayBoard(player1.getPlayerToken(), player2.getPlayerToken());
+        
+        gameBoard.checkBoard();
+        if (!gameBoard.isGameNotOver()){
+            System.out.println(player1.getPlayerName() + " Wins");
+            player1.addWin();
+            player2.addLoss();
+            continue;
+        }
+        System.out.println(player2.getPlayerName() + "'s turn");
+        while (!gameBoard.dropPiece(Integer.parseInt(location.askUser()), 2)){
+            System.out.println("Column is full please enter a valid move");
+        }
+        gameBoard.displayBoard(player1.getPlayerToken(), player2.getPlayerToken());
+        
+        gameBoard.checkBoard();
+        if (!gameBoard.isGameNotOver()){
+            System.out.println(player2.getPlayerName() + " Wins");
+            player2.addWin();
+            player1.addLoss();
+            continue;
+        }
+    }
 }
 }

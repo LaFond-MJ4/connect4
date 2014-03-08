@@ -13,16 +13,12 @@ public class Board {
 
     private int[][] gameBoard = new int[6][7];
     private boolean gameNotOver = true;
-    private GetLocation getLocation = new GetLocation();
-    private Game token = new Game();
-
-    public Board() {
-    }
 
     int i;
     int j;
-    int y;
-    int p = 0;
+
+    public Board() {
+    }
 
     public void newBoard() {
         for (i = 0; i < 6; i++) {
@@ -32,16 +28,14 @@ public class Board {
         }
     }
 
-    public void displayBoard(String player1, String player2,String token1, String token2) {
-        for (i = 0; i < 6; i++) {
+    public void displayBoard(String token1, String token2) {
+        for (i = 5; i >= 0; i--) {
             System.out.print("|");
             for (j = 0; j < 7; j++) {
                 boardFill(token1, token2);
             }
             System.out.println();
         }
-        p++;
-        playerPlacement(player1, player2, token1, token2);
     }
 
     public void boardFill(String token1, String token2) {
@@ -52,39 +46,173 @@ public class Board {
         } else {
             System.out.print(token2 + "|");
         }
+    }
 
+    public void checkBoard() {
+        checkRows();
+        checkCol();
+        checkDiag();
+    }
+
+    public boolean dropPiece(int col, int playersTurn) {
+        for (int i = 0; i < 6; i++) {
+            if (i == 5 && gameBoard[i][col - 1] != 3) {
+                return false;
+            }
+            if (gameBoard[i][col - 1] == 3) {
+                gameBoard[i][col - 1] = playersTurn;
+                return true;
+            }
+        }
+        return true;
+    }
+
+    public void checkRows() {
+        for (int i = 0; i < 6; i++) {
+            int fourInARow[] = new int[]{3, 3, 3, 3};
+            for (int j = 0; j < 7; j++) {
+                if (gameBoard[i][j] == 3) {
+                    fourInARow[0] = 3;
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
+                } else if (fourInARow[0] == 3) {
+                    fourInARow[0] = gameBoard[i][j];
+                } else if (fourInARow[1] == 3 && gameBoard[i][j] == fourInARow[0]) {
+                    fourInARow[1] = gameBoard[i][j];
+                } else if (fourInARow[2] == 3 && gameBoard[i][j] == fourInARow[1]) {
+                    fourInARow[2] = gameBoard[i][j];
+                } else if (fourInARow[3] == 3 && gameBoard[i][j] == fourInARow[2]) {
+                    gameNotOver = false;
+                    break;
+                } else {
+                    fourInARow[0] = 3;
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
+                }
+            }
+        }
+    }
+
+    public void checkCol() {
+        for (int i = 0; i < 7; i++) {
+            int fourInARow[] = new int[]{3, 3, 3, 3};
+            for (int j = 0; j < 6; j++) {
+                if (gameBoard[j][i] == 3) {
+                    fourInARow[0] = 3;
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
+                } else if (fourInARow[0] == 3) {
+                    fourInARow[0] = gameBoard[j][i];
+                } else if (fourInARow[1] == 3 && gameBoard[j][i] == fourInARow[0]) {
+                    fourInARow[1] = gameBoard[j][i];
+                } else if (fourInARow[2] == 3 && gameBoard[j][i] == fourInARow[1]) {
+                    fourInARow[2] = gameBoard[j][i];
+                } else if (fourInARow[3] == 3 && gameBoard[j][i] == fourInARow[2]) {
+                    gameNotOver = false;
+                    break;
+                } else {
+                    fourInARow[0] = 3;
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
+                }
+            }
+        }
+    }
+
+    public void checkDiag() {
+        int rows = gameBoard.length;
+        int cols = gameBoard[0].length;
+        int maxSum = rows + cols - 2;
+
+        for (int sum = 0; sum <= maxSum; sum++) {
+            int fourInARow[] = new int[]{3, 3, 3, 3};
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    if (i + j - sum == 0) {
+                        if (gameBoard[i][j] == 3) {
+                            fourInARow[0] = 3;
+                            fourInARow[1] = 3;
+                            fourInARow[2] = 3;
+                            fourInARow[3] = 3;
+                        } else if (fourInARow[0] == 3) {
+                            fourInARow[0] = gameBoard[i][j];
+                        } else if (fourInARow[1] == 3 && gameBoard[i][j] == fourInARow[0]) {
+                            fourInARow[1] = gameBoard[i][j];
+                        } else if (fourInARow[2] == 3 && gameBoard[i][j] == fourInARow[1]) {
+                            fourInARow[2] = gameBoard[i][j];
+                        } else if (fourInARow[3] == 3 && gameBoard[i][j] == fourInARow[2]) {
+                            gameNotOver = false;
+                            break;
+                        } else {
+                            fourInARow[0] = 3;
+                            fourInARow[1] = 3;
+                            fourInARow[2] = 3;
+                            fourInARow[3] = 3;
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i = gameBoard.length - 1; i > 0; i--) {
+            int fourInARow[] = new int[]{3, 3, 3, 3};
+            for (int j = 0, x = i; x <= gameBoard.length - 1; j++, x++) {
+                if (gameBoard[x][j] == 3) {
+                    fourInARow[0] = 3;
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
+                } else if (fourInARow[0] == 3) {
+                    fourInARow[0] = gameBoard[x][j];
+                } else if (fourInARow[1] == 3 && gameBoard[x][j] == fourInARow[0]) {
+                    fourInARow[1] = gameBoard[x][j];
+                } else if (fourInARow[2] == 3 && gameBoard[x][j] == fourInARow[1]) {
+                    fourInARow[2] = gameBoard[x][j];
+                } else if (fourInARow[3] == 3 && gameBoard[x][j] == fourInARow[2]) {
+                    gameNotOver = false;
+                    break;
+                } else {
+                    fourInARow[0] = 3;
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
+                }
+            }
+        }
+
+        for (int i = 0; i <= gameBoard.length - 1; i++) {
+            int fourInARow[] = new int[]{3, 3, 3, 3};
+            for (int j = 0, y = i; y <= gameBoard.length - 1; j++, y++) {
+                if (gameBoard[j][y] == 3) {
+                    fourInARow[0] = 3;
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
+                } else if (fourInARow[0] == 3) {
+                    fourInARow[0] = gameBoard[j][y];
+                } else if (fourInARow[1] == 3 && gameBoard[j][y] == fourInARow[0]) {
+                    fourInARow[1] = gameBoard[j][y];
+                } else if (fourInARow[2] == 3 && gameBoard[j][y] == fourInARow[1]) {
+                    fourInARow[2] = gameBoard[j][y];
+                } else if (fourInARow[3] == 3 && gameBoard[j][y] == fourInARow[2]) {
+                    gameNotOver = false;
+                    break;
+                } else {
+                    fourInARow[0] = 3;
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
+                }
+            }
+        }
     }
 
     public int[][] getGameBoard() {
         return gameBoard;
-    }
-
-    public void playerPlacement(String player1, String player2, String token1, String token2) {
-        if (p % 2 == 0) {
-            System.out.println(player2 + ", it is your turn");
-        } else {
-            System.out.println(player1 + ", it is your turn");
-        }
-        String x = this.getLocation.askUser();
-        y = Integer.parseInt(x);
-        if (this.gameBoard[0][y] != 3) {
-            System.out.println("This column is full");
-            playerPlacement(player1, player2, token1, token2);
-        }
-        if (this.gameBoard[0][y] == 3) {
-            for (i = 5; i >= 0; i--) {
-                if (this.gameBoard[i][y] == 3) {
-                    if (p % 2 == 0) {
-                        this.gameBoard[i][y] = 2;
-                        displayBoard(player1, player2, token1, token2);
-                    } else {
-                        this.gameBoard[i][y] = 1;
-                        displayBoard(player1, player2, token1, token2);
-                    }
-
-                }
-            }
-        }
     }
 
     public void setGameBoard(int[][] gameBoard) {
