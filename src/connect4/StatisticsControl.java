@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author Madison
  */
-public class StatisticsControl implements Serializable{
+public class StatisticsControl extends Menu implements Serializable{
 
     public StatisticsControl() {
 

@@ -11,14 +11,11 @@ package connect4;
  *
  * @author Jim Cendejas
  */
-public class MainMenuControl {
+public class MainMenuControl extends Menu {
     
     public void startGame(long noPlayers) {
-        if(noPlayers != 1 && noPlayers != 2) {
-            System.out.println("startGame - invalid number of players specified.");
-            return;
-        }
-
+        test();
+    
         Game game = new Game();
         if (noPlayers == 1) {
             game.playGame(1);
