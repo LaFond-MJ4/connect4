@@ -6,7 +6,6 @@
 
 package CIT230LaFond.Connect4.Menus;
 
-import CIT230LaFond.Connect4.Menus.HelpMenuControl;
 import connect4.Connect4Error;
 import java.util.Scanner;
 
@@ -14,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Madison
  */
-public class HelpMenuView extends Menu {
+public class HelpMenuView extends Menu implements DisplayInfo, EnterInfo{
     private final static String[][] menuItems = {
         {"B", "The board"},
         {"C", "A computer player"}, 
@@ -23,7 +22,7 @@ public class HelpMenuView extends Menu {
     };
     
     // Create instance of the HelpMenuControl (action) class
-    private HelpMenuControl helpMenuControl = new HelpMenuControl();
+    private final HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     // default constructor
     public HelpMenuView() {
@@ -31,6 +30,7 @@ public class HelpMenuView extends Menu {
     } 
     
     // display the help menu and get the end users input selection
+    @Override
     public void getInput() {       
               
         String command;
@@ -57,20 +57,18 @@ public class HelpMenuView extends Menu {
                     break;
                 default: 
                     new Connect4Error().displayError("Invalid command. Please enter a valid command.");
-                    continue;
             }
         } while (!command.equals("Q"));  
-        
-         return;
     }
 
         // displays the help menu
+    @Override
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < HelpMenuView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        
+        for (String[] menuItem : HelpMenuView.menuItems) {
+            System.out.println("\t   " + menuItem[0] + "\t" + menuItem[1]);
         }
         System.out.println("\t===============================================================\n");
     }

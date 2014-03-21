@@ -6,7 +6,6 @@
 
 package CIT230LaFond.Connect4.Menus;
 
-import CIT230LaFond.Connect4.Menus.StatisticsControl;
 import connect4.Connect4Error;
 import java.io.Serializable;
 import java.util.Scanner;
@@ -15,17 +14,19 @@ import java.util.Scanner;
  *
  * @author Madison
  */
-public class  StatisticsMenu implements Serializable{
+public class  StatisticsMenu implements Serializable, EnterInfo, DisplayInfo{
     private final static String[][] menuItems = {
         {"L", "last statistics"},
         {"O", "statistics overall"},         
         {"Q", "Quit statistics"}        
     };
     
-    private StatisticsControl StatisticsControl = new StatisticsControl();
+    private final StatisticsControl StatisticsControl = new StatisticsControl();
     
     public StatisticsMenu(){
     }
+    
+    @Override
     public void getInput() {       
               
         String command;
@@ -50,20 +51,18 @@ public class  StatisticsMenu implements Serializable{
                     break;                  
                 default: 
                     new Connect4Error().displayError("Invalid command. Please enter a valid command.");
-                    continue;
             }
         } while (!command.equals("Q"));  
-        
-         return;
     }
 
         // displays the help menu
-    private final void display() {
+    @Override
+    public void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < StatisticsMenu.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        
+        for (String[] menuItem : StatisticsMenu.menuItems) {
+            System.out.println("\t   " + menuItem[0] + "\t" + menuItem[1]);
         }
         System.out.println("\t===============================================================\n");
     }

@@ -11,11 +11,9 @@ package CIT230LaFond.Connect4.Menus;
  * @author Jim, Kyle, MJ
  */
 public abstract class Menu {
-    int test = 5;
+    String test = "this is a test to check inheritance";
     
     public void test() {
         System.out.println(test);
-        
-    
     }
 }

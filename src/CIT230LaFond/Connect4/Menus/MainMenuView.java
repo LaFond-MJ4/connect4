@@ -6,7 +6,6 @@
 
 package CIT230LaFond.Connect4.Menus;
 
-import CIT230LaFond.Connect4.Menus.MainMenuControl;
 import connect4.Connect4Error;
 import java.util.Scanner;
 
@@ -14,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Jim Cendejas
  */
-public class MainMenuView {
+public class MainMenuView implements DisplayInfo, EnterInfo {
     
     private static final String[][] menuItems = {
         {"1", "One player game"},
@@ -30,6 +29,7 @@ public class MainMenuView {
         
     }
     
+    @Override
     public void getInput() {
         String command;
         Scanner inFile = new Scanner(System.in);
@@ -58,18 +58,18 @@ public class MainMenuView {
                     break;
                 default:
                     new Connect4Error().displayError("Invalid command. Please enter a valid command.");
-                    continue;
+                    break;
             }
         } while (!command.equals("X"));
-        return;
     }
     
+    @Override 
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
         
-        for (int i = 0; i < MainMenuView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        for (String[] menuItem : MainMenuView.menuItems) {
+            System.out.println("\t   " + menuItem[0] + "\t" + menuItem[1]);
         }
         System.out.println("\t=================================================================");
     }
