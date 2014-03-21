@@ -10,7 +10,7 @@ package CIT230LaFond.Connect4.Menus;
  *
  * @author Jim
  */
-public class DisplayInfo extends Menu {
+public interface DisplayInfo {
     
-    display()
+    public void display();
 }

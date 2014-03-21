@@ -10,6 +10,7 @@ package CIT230LaFond.Connect4.Menus;
  *
  * @author Jim
  */
-public class EnterInfo {
+public interface EnterInfo {
     
+    public void getInput();
 }
