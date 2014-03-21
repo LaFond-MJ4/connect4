@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 
-package connect4;
+package CIT230LaFond.Connect4.Menus;
+
+import connect4.Game;
+
 
 
 /**

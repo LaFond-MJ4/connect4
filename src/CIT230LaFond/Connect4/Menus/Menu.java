@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package connect4;
+package CIT230LaFond.Connect4.Menus;
 
 /**
  *
@@ -15,5 +15,7 @@ public abstract class Menu {
     
     public void test() {
         System.out.println(test);
+        
+    
     }
 }

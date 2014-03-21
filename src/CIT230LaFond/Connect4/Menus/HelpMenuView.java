@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 
-package connect4;
+package CIT230LaFond.Connect4.Menus;
 
+import CIT230LaFond.Connect4.Menus.HelpMenuControl;
+import connect4.Connect4Error;
 import java.util.Scanner;
 
 /**
