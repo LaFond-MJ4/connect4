@@ -29,8 +29,10 @@ public class Board {
     }
 
     public void displayBoard(String token1, String token2) {
+        System.out.println("\n\t\t 1 2 3 4 5 6 7");
+        System.out.println("\t\t---------------");
         for (i = 5; i >= 0; i--) {
-            System.out.print("|");
+            System.out.print("\t\t|");
             for (j = 0; j < 7; j++) {
                 boardFill(token1, token2);
             }
@@ -76,21 +78,47 @@ public class Board {
                     fourInARow[1] = 3;
                     fourInARow[2] = 3;
                     fourInARow[3] = 3;
-                } else if (fourInARow[0] == 3) {
+                    continue;
+                }
+                if (fourInARow[0] == 3) {
                     fourInARow[0] = gameBoard[i][j];
-                } else if (fourInARow[1] == 3 && gameBoard[i][j] == fourInARow[0]) {
+                    continue;
+                }
+                if (fourInARow[1] == 3 && gameBoard[i][j] == fourInARow[0]) {
                     fourInARow[1] = gameBoard[i][j];
-                } else if (fourInARow[2] == 3 && gameBoard[i][j] == fourInARow[1]) {
-                    fourInARow[2] = gameBoard[i][j];
-                } else if (fourInARow[3] == 3 && gameBoard[i][j] == fourInARow[2]) {
-                    gameNotOver = false;
-                    break;
-                } else {
-                    fourInARow[0] = 3;
+                    continue;
+                } else if (fourInARow[1] == 3 && gameBoard[i][j] != fourInARow[0]) {
+                    fourInARow[0] = gameBoard[i][j];
                     fourInARow[1] = 3;
                     fourInARow[2] = 3;
                     fourInARow[3] = 3;
+                    continue;
                 }
+                if (fourInARow[2] == 3 && gameBoard[i][j] == fourInARow[0]) {
+                    fourInARow[2] = gameBoard[i][j];
+                    continue;
+                } else if (fourInARow[2] == 3 && gameBoard[i][j] != fourInARow[0]) {
+                    fourInARow[0] = gameBoard[i][j];
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
+                    continue;
+                }
+                if (fourInARow[3] == 3 && gameBoard[i][j] == fourInARow[0]) {
+                    gameNotOver = false;
+                    break;
+                } else if (fourInARow[3] == 3 && gameBoard[i][j] != fourInARow[0]) {
+                    fourInARow[0] = gameBoard[i][j];
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
+                    continue;
+                }
+                fourInARow[0] = 3;
+                fourInARow[1] = 3;
+                fourInARow[2] = 3;
+                fourInARow[3] = 3;
+
             }
         }
     }
@@ -142,11 +170,26 @@ public class Board {
                             fourInARow[0] = gameBoard[i][j];
                         } else if (fourInARow[1] == 3 && gameBoard[i][j] == fourInARow[0]) {
                             fourInARow[1] = gameBoard[i][j];
+                        } else if (fourInARow[1] == 3 && gameBoard[i][j] != fourInARow[0]) {
+                            fourInARow[0] = gameBoard[i][j];
+                            fourInARow[1] = 3;
+                            fourInARow[2] = 3;
+                            fourInARow[3] = 3;
                         } else if (fourInARow[2] == 3 && gameBoard[i][j] == fourInARow[1]) {
                             fourInARow[2] = gameBoard[i][j];
+                        } else if (fourInARow[2] == 3 && gameBoard[i][j] != fourInARow[0]) {
+                            fourInARow[0] = gameBoard[i][j];
+                            fourInARow[1] = 3;
+                            fourInARow[2] = 3;
+                            fourInARow[3] = 3;
                         } else if (fourInARow[3] == 3 && gameBoard[i][j] == fourInARow[2]) {
                             gameNotOver = false;
                             break;
+                        } else if (fourInARow[3] == 3 && gameBoard[i][j] != fourInARow[0]) {
+                            fourInARow[0] = gameBoard[i][j];
+                            fourInARow[1] = 3;
+                            fourInARow[2] = 3;
+                            fourInARow[3] = 3;
                         } else {
                             fourInARow[0] = 3;
                             fourInARow[1] = 3;
@@ -170,11 +213,26 @@ public class Board {
                     fourInARow[0] = gameBoard[x][j];
                 } else if (fourInARow[1] == 3 && gameBoard[x][j] == fourInARow[0]) {
                     fourInARow[1] = gameBoard[x][j];
+                } else if (fourInARow[1] == 3 && gameBoard[x][j] != fourInARow[0]) {
+                    fourInARow[0] = gameBoard[x][j];
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
                 } else if (fourInARow[2] == 3 && gameBoard[x][j] == fourInARow[1]) {
                     fourInARow[2] = gameBoard[x][j];
+                } else if (fourInARow[2] == 3 && gameBoard[x][j] != fourInARow[0]) {
+                    fourInARow[0] = gameBoard[x][j];
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
                 } else if (fourInARow[3] == 3 && gameBoard[x][j] == fourInARow[2]) {
                     gameNotOver = false;
                     break;
+                } else if (fourInARow[3] == 3 && gameBoard[x][j] != fourInARow[0]) {
+                    fourInARow[0] = gameBoard[x][j];
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
                 } else {
                     fourInARow[0] = 3;
                     fourInARow[1] = 3;
@@ -196,11 +254,26 @@ public class Board {
                     fourInARow[0] = gameBoard[j][y];
                 } else if (fourInARow[1] == 3 && gameBoard[j][y] == fourInARow[0]) {
                     fourInARow[1] = gameBoard[j][y];
+                } else if (fourInARow[1] == 3 && gameBoard[j][y] != fourInARow[0]) {
+                    fourInARow[0] = gameBoard[j][y];
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
                 } else if (fourInARow[2] == 3 && gameBoard[j][y] == fourInARow[1]) {
                     fourInARow[2] = gameBoard[j][y];
+                } else if (fourInARow[2] == 3 && gameBoard[j][y] != fourInARow[0]) {
+                    fourInARow[0] = gameBoard[j][y];
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
                 } else if (fourInARow[3] == 3 && gameBoard[j][y] == fourInARow[2]) {
                     gameNotOver = false;
                     break;
+                } else if (fourInARow[3] == 3 && gameBoard[j][y] != fourInARow[0]) {
+                    fourInARow[0] = gameBoard[j][y];
+                    fourInARow[1] = 3;
+                    fourInARow[2] = 3;
+                    fourInARow[3] = 3;
                 } else {
                     fourInARow[0] = 3;
                     fourInARow[1] = 3;

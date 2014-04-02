@@ -5,7 +5,6 @@
  */
 package CIT230LaFond.Connect4.Menus;
 
-import connect4.Connect4Error;
 import java.util.Scanner;
 
 /**
@@ -61,9 +60,6 @@ public class MainMenuView implements DisplayInfo, EnterInfo {
                 }
             } catch (MenuException gex) {
                 System.out.println("\n\t" + gex.getMessage());
-            }
-            finally {
-                System.out.println("Thank you for playing.");
             }
         } while (true);
     }
