@@ -40,6 +40,25 @@ public class Board {
         }
     }
 
+    public String displayBoard2(String token1, String token2) {
+        String temp = "\n\t\t 1 2 3 4 5 6 7\n";
+        temp += "\t\t---------------\n";
+        for (i = 5; i >= 0; i--) {
+            temp += "\t\t|";
+            for (j = 0; j < 7; j++) {
+                if (this.gameBoard[i][j] == 3) {
+                    temp += "_" + "|";
+                } else if (this.gameBoard[i][j] == 1) {
+                    temp += token1 + "|";
+                } else {
+                    temp += token2 + "|";
+                }
+            }
+            temp += "\n";
+        }
+        return temp;
+    }
+
     public void boardFill(String token1, String token2) {
         if (this.gameBoard[i][j] == 3) {
             System.out.print("_" + "|");

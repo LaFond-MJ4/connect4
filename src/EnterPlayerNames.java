@@ -1,7 +1,3 @@
-package connect4;
-
-import javax.swing.JTextField;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -52,11 +48,6 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jLabel3.setText("Enter the name of the players below");
 
         submitPlayerNames.setText("Continue");
-        submitPlayerNames.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitPlayerNamesActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -113,28 +104,10 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setSize(new java.awt.Dimension(473, 268));
-        setLocationRelativeTo(null);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitPlayerNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitPlayerNamesActionPerformed
-        // TODO add your handling code here:
-        player1Name = playerOneName.getText();
-        player2Name = playerTwoName.getText();
-        setVisible(false);
-    }//GEN-LAST:event_submitPlayerNamesActionPerformed
 
-
-    public String getPlayer1Name() {
-        return player1Name;
-    }
-
-    public String getPlayer2Name() {
-        return player2Name;
-    }
-
-    private String player1Name;
-    private String player2Name;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -144,8 +117,4 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     private javax.swing.JTextField playerTwoName;
     private javax.swing.JButton submitPlayerNames;
     // End of variables declaration//GEN-END:variables
-
-    void initializeForm() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

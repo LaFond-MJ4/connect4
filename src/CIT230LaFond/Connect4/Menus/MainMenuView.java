@@ -27,17 +27,17 @@ public class MainMenuView implements DisplayInfo, EnterInfo {
 
     }
 
-    @Override
-    public void getInput() {
-        String command;
-        Scanner inFile = new Scanner(System.in);
+    //@Override
+    public void getInput(String command) {
+        //String command;
+        //Scanner inFile = new Scanner(System.in);
 
         do {
             try {
-                this.display();
+                //this.display();
 
-                command = inFile.nextLine();
-                command = command.trim().toUpperCase();
+                //command = inFile.nextLine();
+                //command = command.trim().toUpperCase();
 
                 switch (command) {
                     case "1":
@@ -73,5 +73,10 @@ public class MainMenuView implements DisplayInfo, EnterInfo {
             System.out.println("\t   " + menuItem[0] + "\t" + menuItem[1]);
         }
         System.out.println("\t=================================================================");
+    }
+
+    @Override
+    public void getInput() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
