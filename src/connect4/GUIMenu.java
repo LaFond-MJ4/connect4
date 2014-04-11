@@ -56,14 +56,25 @@ public class GUIMenu extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         onePlayerGame.setText("One Player Game");
+        onePlayerGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onePlayerGameActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Two Player Game");
 
-        jButton3.setText("Satistics");
+        jButton3.setText("Statistics");
+        jButton3.setActionCommand("Statistics");
 
         jButton4.setText("Help");
 
         jButton5.setText("Exit");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -165,6 +176,14 @@ public class GUIMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void onePlayerGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onePlayerGameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onePlayerGameActionPerformed
 
 
 

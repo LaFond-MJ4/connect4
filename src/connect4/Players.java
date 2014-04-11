@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Madison
+ * @author MJ, Jim, Kyle
  */
 
 /* This class will have all the information relating to one player */
